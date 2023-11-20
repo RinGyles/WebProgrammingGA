@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Math Game</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- Task 1 -->
+    <form id="registrationform">
+        <label for="fname" id="fnamelbl">First Name</label>
+        <input type="text" id="fname" minlength="3" placeholder="First name"><br><br>
+        <label for="lname" id="lnamelbl">Last Name</label>
+        <input type="text" id="lname" minlength="3" placeholder="Last name"><br><br>
+        <label for="dob" id="doblbl">Date of Birth</label>
+        <input type="date" id="dob" onchange="calculateAge()"><br><br>
+        <label for="age" id="agelbl" max="12" min="8">Age</label>
+        <input type="number" id="age" disabled><br><br>
+        <label for="gender" id="genderlbl">Gender</label>
+        <select id="gender">
+            <option value="other">Other</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        <label for="email" id="emaillbl">Email</label>
+        <input type="email" id="email" placeholder="example@gmail.com"><br><br>
+
+        <!--Task 3-->
+        <input type = "button" id = "reg" value = "Register">
+
+        <!-- Task 5: Add the Start button -->
+        <input type="button" id="start" value="Start" onclick="PlayGame()" disabled>
+
+        <!-- Task 8: Add the Next Button -->
+        <input type="button" id="next" value="Next" onclick="PlayGame()">
+
+        <!-- Task 11: Add End button -->
+        <input type="button" id="end" value="End" onclick="findPercentageScore(); clearForm()" disabled><br><br>
+
+        <!-- Task 9: Add Statistic Display Area -->
+        <textarea name="" id="showpercentage" cols="30" rows="20" disabled></textarea>
+
+        <!-- Task 12: Add a new display area -->
+        <textarea name="" id="showallplayers" cols="40" rows="20" disabled></textarea>
+
+        <!-- Task 13: Add the playArea textarea for displaying questions and answers -->
+        <textarea name="" id="playAreaText" cols="40" rows="20" disabled></textarea>
+
+    </form>
+
+    <div id="playArea" style="display: none;">
+        <div id="equation"></div>
+        <input type="number" id="answer" placeholder="Your answer">
+        <input type="button" id="next" value="Next" onclick="PlayGame()">
+        <!-- Task 7: Add the CheckAnswer button -->
+        <input type="button" id="checkAnswer" value="Check Answer" onclick="CheckAnswer()">
+    </div>
+
+    <div id="showcharts">
+      <div id="gender-chart">
+          <h2>Player Gender Chart</h2>
+          <div id="gender-table"></div>
+      </div>
+      <div id="freq-chart">
+          <h2>Score % Frequency Chart</h2>
+          <div id="freq-table"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
