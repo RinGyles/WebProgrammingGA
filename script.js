@@ -69,12 +69,27 @@ reg.addEventListener("click", Register);
 
 //Task 4: Generate random numbers for the equation
 function PlayGame() {
-    const num1 = Math.floor(Math.random() * 9) + 1;
-    const num2 = Math.floor(Math.random() * 5) + 1;
-    const equationText = `${num1} x ${num2} = `;
-    document.getElementById("equation").textContent = equationText;
-    document.getElementById("answer").value = "";
-    document.getElementById("playArea").style.display = "block";
+  const num1 = Math.floor(Math.random() * 9) + 1;
+  const num2 = Math.floor(Math.random() * 5) + 1;
+  const equationText = `${num1} x ${num2} = `;
+  
+  // Enable play area
+  document.getElementById("playArea").style.display = "block";
+  
+  // Display the equation
+  document.getElementById("equation").textContent = equationText;
+  
+  // Enable the answer input
+  document.getElementById("answer").disabled = false;
+  
+  // Enable the Check Answer button
+  document.getElementById("checkAnswer").disabled = false;
+  
+  // Enable the Next button
+  document.getElementById("next").disabled = false;
+  
+  // Clear previous player's answer display
+  document.getElementById("playAreaText").value = "";
 }
 
 // Task 6: Check and validate the player's answer
